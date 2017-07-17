@@ -17,16 +17,26 @@ public class Tasc1 {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Введите вектор [а, b] с шагом h.");
-        System.out.println("Введите а  = ");
-        float a = scanner.nextFloat();
+        System.out.print("Введите а  = ");
+        int a = scanner.nextInt();
 
-        System.out.println("Введите b = ");
-        float b = scanner.nextFloat();
+        System.out.print("Введите b = ");
+        int b = scanner.nextInt();
 
-        System.out.println("Введите шаг h = ");
-        float h = scanner.nextFloat();
+        System.out.print("Введите шаг h = ");
+        int h = scanner.nextInt();
 
+        for (int i = a; i <= ((b - a) / h); i++) {
+            System.out.format("%x  > F(%x) = %x - sin(%x) = %.3f%n", i, i, i, i, (i - Math.sin(i)));
+        }
 
+        for (int i = a; i <= ((b - a) / h); i++) {
+            System.out.format("%x  > F(%x) = sin^2(%x) = %.3f%n", i, i, i, (Math.sin(i) * Math.sin(i)));
+        }
+
+        for (int i = a; i <= ((b - a) / h); i++) {
+            System.out.format("%x  > F(%x) = 2cos(%x) - 1 = %.3f%n", i, i, i, (2 * Math.cos(i) - 1));
+        }
 
     }
 
